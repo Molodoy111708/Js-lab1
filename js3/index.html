@@ -1,0 +1,26 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерфейс сортування</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Інтерфейс сортування</h1>
+    <div class="container">
+        <div class="row">
+            <input type="file" id="fileInput" accept=".txt" />
+            <button type="button" onclick="uploadFile()">Завантажити</button>
+        </div>
+        <div class="row">
+            <button type="button" onclick="downloadFile()">Завантажити файл</button>
+            <button type="button" onclick="sortNumbers()">Сортувати за кількістю цифр</button>
+        </div>
+        <div id="output">Зміст файлу з'явиться тут.</div>
+        <div id="numberContainer" class="number-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

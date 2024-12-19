@@ -1,20 +1,32 @@
-let x = parseFloat(prompt("Введите координату x точки:"));
-let y = parseFloat(prompt("Введите координату y точки:"));
+// Завдання 3: Чи належить точка об'єднанню двох вертикальних стрічок
 
-// Параметры первой вертикальной полосы
-let x_min1 = -2;
-let x_max1 = 0;
+// Введення координат стрічок та точки
+let x1_1 = parseFloat(prompt("Введіть x1 для першої стрічки:"));
+let x2_1 = parseFloat(prompt("Введіть x2 для першої стрічки:"));
 
-// Параметры второй вертикальной полосы
-let x_min2 = 1;
-let x_max2 = 3;
+let x1_2 = parseFloat(prompt("Введіть x1 для другої стрічки:"));
+let x2_2 = parseFloat(prompt("Введіть x2 для другої стрічки:"));
 
-// Проверка принадлежности
-let inFirstStrip = (x >= x_min1 && x <= x_max1);
-let inSecondStrip = (x >= x_min2 && x <= x_max2);
+let x = parseFloat(prompt("Введіть координату x точки:"));
+let y = parseFloat(prompt("Введіть координату y точки:"));
 
-if (inFirstStrip || inSecondStrip) {
-    console.log("Точка принадлежит объединению полос.");
+// Перевірка належності точки об'єднанню стрічок
+const inFirstStripe = x1_1 <= x && x <= x2_1; // Належить першій стрічці
+const inSecondStripe = x1_2 <= x && x <= x2_2; // Належить другій стрічці
+
+// Присвоюємо значення змінній result
+const result = inFirstStripe || inSecondStripe; // Належить хоча б одній із стрічок?
+
+// Вивід результату
+console.log("Початкові дані:");
+console.log(`Перша стрічка: x1=${x1_1}, x2=${x2_1}`);
+console.log(`Друга стрічка: x1=${x1_2}, x2=${x2_2}`);
+console.log(`Точка: (${x}, ${y})`);
+
+if (result) {
+  console.log("Точка належить об'єднанню стрічок.");
+  alert("Точка належить об'єднанню стрічок.");
 } else {
-    console.log("Точка не принадлежит объединению полос.");
+  console.log("Точка НЕ належить об'єднанню стрічок.");
+  alert("Точка НЕ належить об'єднанню стрічок.");
 }
